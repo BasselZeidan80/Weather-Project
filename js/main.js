@@ -12,7 +12,7 @@ searchBtn.addEventListener("click", function () {
 let data = {};
 async function getDetailsApis(country) {
   const api = await fetch(
-    ` http://api.weatherapi.com/v1/forecast.json?key=f27355435cd34175b78144432241501&q=${country}&days=5`
+    ` https://api.weatherapi.com/v1/forecast.json?key=f27355435cd34175b78144432241501&q=${country}&days=5`
   );
   let response = await api.json();
   data = response;
@@ -94,7 +94,7 @@ document.getElementById("locationBtn").addEventListener("click", function () {
     try {
       const location = await getCurrentLocation();
       const api = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=f27355435cd34175b78144432241501&q=${location.latitude},${location.longitude}&days=5`
+        `https://api.weatherapi.com/v1/forecast.json?key=f27355435cd34175b78144432241501&q=${location.latitude},${location.longitude}&days=5`
       );
       let response = await api.json();
       data = response;
